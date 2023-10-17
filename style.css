@@ -1,0 +1,11 @@
+body {
+    background-image: url("https://img.freepik.com/premium-vector/background-with-pastel-neutral-color-with-simple-elegant-shape-ornament_189483-153.jpg");
+    font-family: 'Work Sans', sans-serif;
+    font-size: 25px;
+    padding: 3vw;
+}
+#submit {
+    font-family: 'Work Sans', sans-serif;
+    margin: 4vw;
+    padding: 1vw;
+}
