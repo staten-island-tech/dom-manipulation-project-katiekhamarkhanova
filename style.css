@@ -1,11 +1,33 @@
 body {
-    background-image: url("https://img.freepik.com/premium-vector/background-with-pastel-neutral-color-with-simple-elegant-shape-ornament_189483-153.jpg");
+    background-color: peachpuff;
     font-family: 'Work Sans', sans-serif;
     font-size: 25px;
+    box-sizing: border-box;
     padding: 3vw;
 }
 #submit {
     font-family: 'Work Sans', sans-serif;
     margin: 4vw;
     padding: 1vw;
+}
+.card {
+    text-align: center;
+    background-color: white;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    margin: 3rem;
+}
+@media screen and (max-width: 1200px) {
+    .card {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .card {
+        width: 100%;
+    }
 }
