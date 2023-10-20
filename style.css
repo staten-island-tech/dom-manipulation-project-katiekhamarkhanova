@@ -2,7 +2,6 @@ body {
     background-color: peachpuff;
     font-family: 'Work Sans', sans-serif;
     font-size: 25px;
-    box-sizing: border-box;
     padding: 3vw;
 }
 #submit {

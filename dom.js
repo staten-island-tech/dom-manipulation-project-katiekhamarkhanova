@@ -9,7 +9,8 @@ const DOMSelectors = {
     h2s: document.querySelectorAll("h2"),
     img: document.querySelectorAll("img"),
   };
-  DOMSelectors.form.addEventListener("submit", function (event) {
+  DOMSelectors.form.addEventListener("submit", function () {
+    console.log(DOMSelectors.firstName.value);
     DOMSelectors.h2s.forEach(
       (el) => el.textContent = DOMSelectors.firstName.value
     );
@@ -21,9 +22,33 @@ const DOMSelectors = {
     DOMSelectors.paragraphs.forEach(
       (el) => el.textContent = DOMSelectors.desc.value
     );
-    event.preventDefault();
-    const inputs = document.querySelectorAll('.first-name, .last-name, .description');
-    inputs.forEach(submit => {
-      submit.value = '';
-    });
+    console.log(DOMSelectors.image.value);
+    DOMSelectors.img.forEach(
+      (el) => el.textContent = DOMSelectors.image.value
+    );
   });
+  function clearFields() {
+    DOMSelectors.form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const inputs = document.querySelectorAll('.first-name, .last-name, .description, .img-link');
+      inputs.forEach(submit => {
+        submit.value = '';
+      })})};
+    clearFields();
+
+
+function makeCard() {
+    
+  };
+function addCard(card) {
+  const card = makeCard();
+  document.querySelector(".gallery")
+  .insertAdjacentHTML(
+    "afterbegin",
+    ``
+  )
+  //const card = makeCard(); , makes card
+  // addCard () , adds to card
+  //clearFields()
+  //addRemoveButtons
+};
