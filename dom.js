@@ -11,11 +11,12 @@ const DOMSelectors = {
   paragraphs: document.querySelectorAll("p"),
   h2s: document.querySelectorAll("h2"),
   img: document.querySelectorAll("img"),
+  input: document.querySelectorAll("#input"),
 };
 function backgroundAndText(background, text) {
   background.style.backgroundColor = "peachpuff";
   text.innerHTML = "Welcome";
-}
+};
 backgroundAndText(DOMSelectors.box, DOMSelectors.text);
 
 function makeCard() {
@@ -32,17 +33,14 @@ function makeCard() {
     DOMSelectors.paragraphs.forEach(
       (el) => (el.textContent = DOMSelectors.desc.value)
     );
-    console.log(DOMSelectors.image.value);
-    DOMSelectors.img.forEach(
-      (el) => (el.textContent = DOMSelectors.image.value)
-    );
   })
 };
 makeCard();
 function addCard() {
-     let newCard = DOMSelectors.card;
+  DOMSelectors.input.addEventListener("submit", function() {
+     let newCard = DOMSelectors.input.value;
      DOMSelectors.box.insertAdjacentHTML("beforeend", `${newCard}`);
-   };
+   })};
 addCard();
 function clearFields() {
   DOMSelectors.form.addEventListener("submit", function (event) {
