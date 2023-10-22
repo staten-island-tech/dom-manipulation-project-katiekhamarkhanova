@@ -1,5 +1,7 @@
 const DOMSelectors = {
     form: document.querySelector("#form"),
+    box: document.querySelector("#box"),
+    text: document.querySelector("#text"),
     firstName: document.querySelector(".first-name"),
     lastName: document.querySelector(".last-name"),
     desc: document.querySelector(".description"),
@@ -9,6 +11,12 @@ const DOMSelectors = {
     h2s: document.querySelectorAll("h2"),
     img: document.querySelectorAll("img"),
   };
+  function backgroundAndText(background, text) {
+    background.style.backgroundColor = "red";
+    text.innerHTML = "This is now a big red box";
+  }
+  backgroundAndText(DOMSelectors.box, DOMSelectors.text);
+
   DOMSelectors.form.addEventListener("submit", function () {
     console.log(DOMSelectors.firstName.value);
     DOMSelectors.h2s.forEach(
