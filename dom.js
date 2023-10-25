@@ -10,6 +10,7 @@ const DOMSelectors = {
   paragraphs: document.querySelectorAll("p"),
   h2s: document.querySelectorAll("h2"),
   backgrounds: document.querySelector(".backgrounds"),
+  button: document.querySelectorAll("#btn"),
 };
 
 function backgroundAndText(background){
@@ -37,12 +38,14 @@ makeCard();
 function addCard() {
 DOMSelectors.form.addEventListener("submit", function() {
   let input = DOMSelectors.input.value;
-  DOMSelectors.box.insertAdjacentHTML("beforeend", 
+  let cards = DOMSelectors.box.insertAdjacentHTML("beforeend", 
   `<div class="card">
   <h2>${input}</h2>
   <h3>${input}</h3>
   <p>${input}</p>
+  <button type="button" id="btn">Delete</button>
 </div>`);
+cards();
 })};
 addCard();
 
@@ -58,6 +61,15 @@ function clearFields() {
     });
   };
 clearFields();
+
+function removeCard() {
+  DOMSelectors.button.addEventListener("click", function () {
+    const cardz = document.querySelector(".card");
+    cardz.remove();
+  });
+};
+removeCard();
+
 
 //const card = makeCard(); , makes card
 // addCard () , adds to card
