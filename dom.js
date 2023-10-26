@@ -5,7 +5,7 @@ const DOMSelectors = {
   firstName: document.querySelector(".first-name"),
   lastName: document.querySelector(".last-name"),
   desc: document.querySelector(".description"),
-  card: document.getElementsByClassName(".card"),
+  card: document.querySelectorAll(".card"),
   h3s: document.querySelectorAll("h3"),
   paragraphs: document.querySelectorAll("p"),
   h2s: document.querySelectorAll("h2"),
@@ -17,7 +17,7 @@ function backgroundAndText(background) {
   background.style.backgroundColor = "lightblue";
 
   /* text.innerHTML = "This is now box"; */
-};
+}
 backgroundAndText(DOMSelectors.backgrounds);
 
 function makeCard() {
@@ -32,14 +32,13 @@ function makeCard() {
       (el) => (el.textContent = DOMSelectors.desc.value)
     );
   });
-};
+}
 makeCard();
 
 function addCard() {
-  DOMSelectors.form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  DOMSelectors.form.addEventListener("submit", function () {
     let input = DOMSelectors.input.value;
-    DOMSelectors.box.insertAdjacentHTML(
+    const card = DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
   <h2>${input}</h2>
@@ -48,8 +47,9 @@ function addCard() {
   <button type="button" id="btn">Delete</button>
 </div>`
     );
+    card();
   });
-};
+}
 addCard();
 
 function clearFields() {
@@ -60,21 +60,20 @@ function clearFields() {
     );
     inputs.forEach((submit) => {
       submit.value = "";
-    });
-  });
-};
-clearFields();
-
-function removeCard() {
-  const buttons = document.getElementById("btn");
-  buttons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      const card = event.currentTarget.parentNode; // Get the parent node of the button (the card element)
-      card.remove(); // Remove the card from the DOM
+      function removeCard() {
+        const buttons = document.querySelectorAll("#btn");
+        buttons.forEach((button) => {
+          button.addEventListener("click", function (event) {
+            const card = event.currentTarget.parentNode; // Get the parent node of the button (the card element)
+            card.remove(); // Remove the card from the DOM
+          });
+        });
+      }
+      removeCard();
     });
   });
 }
-removeCard();
+clearFields();
 
 /* function removeCard() {
   cards.forEach((button) => {button.addEventListener("click", function(event) {
