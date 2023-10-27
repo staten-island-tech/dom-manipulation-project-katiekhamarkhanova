@@ -1,16 +1,16 @@
 const DOMSelectors = {
   form: document.querySelector("#form"),
-  box: document.getElementById("container-box"),
+  box: document.querySelector("#container-box"),
   input: document.querySelector("#input"),
   firstName: document.querySelector(".first-name"),
   lastName: document.querySelector(".last-name"),
   desc: document.querySelector(".description"),
-  card: document.querySelectorAll(".card"),
+  card: document.querySelector(".card"),
   h3s: document.querySelectorAll("h3"),
   paragraphs: document.querySelectorAll("p"),
   h2s: document.querySelectorAll("h2"),
   backgrounds: document.querySelector(".backgrounds"),
-  button: document.querySelectorAll("#btn"),
+  button: document.querySelector("#btn"),
 };
 
 function backgroundAndText(background) {
@@ -37,8 +37,9 @@ makeCard();
 
 function addCard() {
   DOMSelectors.form.addEventListener("submit", function () {
+
     let input = DOMSelectors.input.value;
-    const card = DOMSelectors.box.insertAdjacentHTML(
+    DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
   <h2>${input}</h2>
@@ -47,7 +48,6 @@ function addCard() {
   <button type="button" id="btn">Delete</button>
 </div>`
     );
-    card();
   });
 }
 addCard();
