@@ -1,16 +1,26 @@
 body {
     font-family: 'Work Sans', sans-serif;
     font-size: 25px;
-    padding: 3vw;
+    padding: 1vw;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 #submit {
     font-family: 'Work Sans', sans-serif;
     margin: 4vw;
     padding: 1vw;
+    font-size: 2.5vh;
+    border-radius: 20px;
+    border-color: #afb9e6;
+    background-color:#afb9e6;
+    transition: all 0.5s;
+}
+#submit:hover {
+    transform: scale(1.1);
 }
 .card {
     text-align: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: 20%;
     display: flex;
     flex-direction: column;
@@ -18,6 +28,11 @@ body {
     justify-content: space-between;
     border-radius: 20px;
     margin: 3rem;
+    transition: all 0.5s;
+    display: block;
+}
+.card:hover {
+    transform: scale(1.1);
 }
 @media screen and (max-width: 1200px) {
     .card {
@@ -33,4 +48,28 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#btn {
+    border-radius: 20px;
+    margin: 2vh;
+    background-color: #799ba1;
+    padding: 1vh;
+    font-size: 16px;
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    border-color:#799ba1;
+}
+.seperateButton {
+    display: block;
+    text-align: center;
+}
+#allForms {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+#label {
+    margin-left: 2.2rem;
 }

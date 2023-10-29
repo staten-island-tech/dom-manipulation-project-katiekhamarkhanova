@@ -1,23 +1,25 @@
 const DOMSelectors = {
   form: document.querySelector("#form"),
-  box: document.querySelector("#container-box"),
+  box: document.getElementById("container-box"),
   input: document.querySelector("#input"),
   firstName: document.querySelector(".first-name"),
   lastName: document.querySelector(".last-name"),
   desc: document.querySelector(".description"),
-  card: document.querySelector(".card"),
+  card: document.querySelectorAll(".card"),
   h3s: document.querySelectorAll("h3"),
   paragraphs: document.querySelectorAll("p"),
   h2s: document.querySelectorAll("h2"),
   backgrounds: document.querySelector(".backgrounds"),
-  button: document.querySelector("#btn"),
+  button: document.querySelectorAll("#btn"),
+  imgs: document.querySelector("image"),
+  imgHTML: document.querySelectorAll("img")
 };
 
 function backgroundAndText(background) {
   background.style.backgroundColor = "lightblue";
 
   /* text.innerHTML = "This is now box"; */
-}
+};
 backgroundAndText(DOMSelectors.backgrounds);
 
 function makeCard() {
@@ -31,32 +33,35 @@ function makeCard() {
     DOMSelectors.paragraphs.forEach(
       (el) => (el.textContent = DOMSelectors.desc.value)
     );
+    DOMSelectors.imgHTML.forEach(
+      (el) => (el.textContent = DOMSelectors.imgs)
+    );
   });
-}
+};
 makeCard();
 
 function addCard() {
-  DOMSelectors.form.addEventListener("submit", function () {
-
-    let input = DOMSelectors.input.value;
+  DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
-  <h2>${input}</h2>
-  <h3>${input}</h3>
-  <p>${input}</p>
+  <h2>${DOMSelectors.firstName.value}</h2>
+  <h3>${DOMSelectors.lastName.value}</h3>
+  <p>${DOMSelectors.desc.value}</p>
+  <img src="${DOMSelectors.imgs}" alt="">
   <button type="button" id="btn">Delete</button>
 </div>`
     );
   });
-}
+};
 addCard();
 
 function clearFields() {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
     const inputs = document.querySelectorAll(
-      ".first-name, .last-name, .description"
+      ".first-name, .last-name, .description, .image"
     );
     inputs.forEach((submit) => {
       submit.value = "";
@@ -72,8 +77,9 @@ function clearFields() {
       removeCard();
     });
   });
-}
+};
 clearFields();
+
 
 /* function removeCard() {
   cards.forEach((button) => {button.addEventListener("click", function(event) {
