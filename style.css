@@ -1,13 +1,13 @@
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Kanit', sans-serif;
     font-size: 25px;
     padding: 1vw;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 #submit {
-    font-family: 'Work Sans', sans-serif;
-    margin: 4vw;
+    font-family: 'Kanit', sans-serif;
+    margin: 2vw;
     padding: 1vw;
     font-size: 2.5vh;
     border-radius: 20px;
@@ -56,9 +56,12 @@ body {
     background-color: #799ba1;
     padding: 1vh;
     font-size: 16px;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Kanit', sans-serif;
     color: white;
     border-color:#799ba1;
+}
+#btn:hover {
+    cursor: pointer;
 }
 .seperateButton {
     display: block;
@@ -72,4 +75,8 @@ body {
 }
 #label {
     margin-left: 2.2rem;
+}
+img {
+    width: 80%;
+    border-radius: 20px;
 }

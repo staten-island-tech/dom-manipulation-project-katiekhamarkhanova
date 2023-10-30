@@ -17,8 +17,6 @@ const DOMSelectors = {
 
 function backgroundAndText(background) {
   background.style.backgroundColor = "lightblue";
-
-  /* text.innerHTML = "This is now box"; */
 };
 backgroundAndText(DOMSelectors.backgrounds);
 
@@ -49,7 +47,7 @@ function addCard() {
   <h2>${DOMSelectors.firstName.value}</h2>
   <h3>${DOMSelectors.lastName.value}</h3>
   <p>${DOMSelectors.desc.value}</p>
-  <img src="${DOMSelectors.imgs}" alt="">
+  <img src="${DOMSelectors.imgs}" alt="" />
   <button type="button" id="btn">Delete</button>
 </div>`
     );
