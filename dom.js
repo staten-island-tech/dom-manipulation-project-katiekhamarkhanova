@@ -1,6 +1,6 @@
 const DOMSelectors = {
-  form: document.querySelector("#form"),
-  box: document.getElementById("container-box"),
+  form: document.getElementById("#form"),
+  box: document.querySelector(".container-box"),
   input: document.querySelector("#input"),
   firstName: document.querySelector(".first-name"),
   lastName: document.querySelector(".last-name"),
@@ -14,13 +14,7 @@ const DOMSelectors = {
   imgs: document.querySelector("image"),
   imgHTML: document.querySelectorAll("img")
 };
-
-function backgroundAndText(background) {
-  background.style.backgroundColor = "lightblue";
-};
-backgroundAndText(DOMSelectors.backgrounds);
-
-function makeCard() {
+/* function makeCard() {
   DOMSelectors.form.addEventListener("submit", function () {
     DOMSelectors.h2s.forEach(
       (el) => (el.textContent = DOMSelectors.firstName.value)
@@ -32,36 +26,39 @@ function makeCard() {
       (el) => (el.textContent = DOMSelectors.desc.value)
     );
     DOMSelectors.imgHTML.forEach(
-      (el) => (el.textContent = DOMSelectors.imgs)
+      (el) => (el.textContent = DOMSelectors.imgs.value)
     );
   });
 };
-makeCard();
+makeCard(); */
 
-function addCard() {
+
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
+    console.log()
+    function addCard() {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
   <h2>${DOMSelectors.firstName.value}</h2>
   <h3>${DOMSelectors.lastName.value}</h3>
   <p>${DOMSelectors.desc.value}</p>
-  <img src="${DOMSelectors.imgs}" alt="" />
-  <button type="button" id="btn">Delete</button>
+  <img src="${DOMSelectors.imgs.value}" alt=""></img>
 </div>`
     );
-  });
-};
-addCard();
+  } 
+  addCard()});
+ 
 
-function clearFields() {
+/*   <button type="button" id="btn">Delete</button> */
+
+/* function clearFields() {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
     const inputs = document.querySelectorAll(
       ".first-name, .last-name, .description, .image"
-    );
-    inputs.forEach((submit) => {
+    ); */
+   /*  inputs.forEach((submit) => {
       submit.value = "";
       function removeCard() {
         const buttons = document.querySelectorAll("#btn");
@@ -76,7 +73,7 @@ function clearFields() {
     });
   });
 };
-clearFields();
+clearFields(); */
 
 
 /* function removeCard() {
