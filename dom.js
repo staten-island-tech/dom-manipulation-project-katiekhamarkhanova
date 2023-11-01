@@ -1,5 +1,5 @@
 const DOMSelectors = {
-  form: document.getElementById("#form"),
+  form: document.querySelector("#form"),
   box: document.querySelector(".container-box"),
   input: document.querySelector("#input"),
   firstName: document.querySelector(".first-name"),
@@ -11,10 +11,10 @@ const DOMSelectors = {
   h2s: document.querySelectorAll("h2"),
   backgrounds: document.querySelector(".backgrounds"),
   button: document.querySelectorAll("#btn"),
-  imgs: document.querySelector("image"),
-  imgHTML: document.querySelectorAll("img")
+  imgs: document.querySelector(".image"),
+  imgHTML: document.querySelectorAll("img"),
 };
-/* function makeCard() {
+function makeCard() {
   DOMSelectors.form.addEventListener("submit", function () {
     DOMSelectors.h2s.forEach(
       (el) => (el.textContent = DOMSelectors.firstName.value)
@@ -26,12 +26,11 @@ const DOMSelectors = {
       (el) => (el.textContent = DOMSelectors.desc.value)
     );
     DOMSelectors.imgHTML.forEach(
-      (el) => (el.textContent = DOMSelectors.imgs.value)
+      (el) => (el.textContent = DOMSelectors.imgs)
     );
   });
 };
-makeCard(); */
-
+makeCard();
 
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -44,21 +43,19 @@ makeCard(); */
   <h3>${DOMSelectors.lastName.value}</h3>
   <p>${DOMSelectors.desc.value}</p>
   <img src="${DOMSelectors.imgs.value}" alt=""></img>
+  <button type="button" id="btn">Delete</button>
 </div>`
     );
   } 
   addCard()});
- 
 
-/*   <button type="button" id="btn">Delete</button> */
-
-/* function clearFields() {
+function clearFields() {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
     const inputs = document.querySelectorAll(
       ".first-name, .last-name, .description, .image"
-    ); */
-   /*  inputs.forEach((submit) => {
+    );
+   inputs.forEach((submit) => {
       submit.value = "";
       function removeCard() {
         const buttons = document.querySelectorAll("#btn");
@@ -73,7 +70,7 @@ makeCard(); */
     });
   });
 };
-clearFields(); */
+clearFields();
 
 
 /* function removeCard() {
