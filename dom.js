@@ -61,7 +61,7 @@ function clearFields() {
         const buttons = document.querySelectorAll("#btn");
         buttons.forEach((button) => {
           button.addEventListener("click", function (event) {
-            const card = event.currentTarget.parentNode; // Get the parent node of the button (the card element)
+            const card = event.currentTarget.parentElement; // Get the parent node of the button (the card element)
             card.remove(); // Remove the card from the DOM
           });
         });
