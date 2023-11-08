@@ -8,7 +8,7 @@ body {
     font-family: 'Kanit', sans-serif;
     margin: 2vw;
     padding: 1vw;
-    font-size: 2.5vh;
+    font-size: 18px;
     border-radius: 20px;
     border-color: #afb9e6;
     background-color:#afb9e6;
@@ -77,6 +77,10 @@ img {
     font-family: 'Kanit', sans-serif;
     font-size: 16px;
     border-radius: 10px;
+}
+h1 {
+    text-align: center;
+    color: #799ba1af;
 }
 @media screen and (max-width: 1200px) {
     .card {
